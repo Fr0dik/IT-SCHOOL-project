@@ -1,0 +1,420 @@
+{% load static %}
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>PIG EXCHANGE</title>
+        <style>
+            
+            
+            body{
+                    
+
+                
+                font-family: 'Montserrat', sans-serif;
+                z-index: -8;
+
+
+                }
+
+                ul.nav{
+                list-style-type: none;
+                display: inline-block;
+                position: absolute;
+                width: 100%;
+                z-index: 11;
+                top: 208px;
+                right: -10px;
+                text-align: center;
+
+
+                
+                
+                }
+
+                ul.nav li{
+                display: inline;
+                padding: 6px 20px;
+                width: 50px;
+                height: 20px;
+                                
+
+                }
+
+                a{
+                color: #ce8bda;
+                border-radius: 6px;
+                text-decoration: none;
+                font-size: 12px;
+                font: normal;
+                text-decoration: none;
+                text-align: center;
+                list-style-type: none;
+                display: inline;
+                
+                }
+
+                a:hover{
+                color: white;
+                border-radius: 6px;
+                text-decoration: none;
+                font-size: 12px;
+
+                
+                }
+
+
+
+                .select{
+                    
+                    /* for center */
+                    position: absolute;
+                    top: 220px; 
+                    left: 460px;
+                    margin: auto;
+                    margin-top: 60px;
+                    z-index:4;
+                }
+                .select span{
+                    background-color: white;
+                    width: 100%;
+                    line-height: 35px;
+                    padding: 0px 15px;
+                    border: 1px solid #EDEDED;
+                    font-size: 14px;
+                    font-weight: 500;
+                    cursor: default;
+                    border-radius: 0px;
+                    display: block;
+                    width: 610px;
+                    height: auto;
+                    font: normal;
+                    z-index: 9;
+                }
+                .select svg{
+                    position: absolute;
+                    top: 4px;
+                    right: 5px;
+                    width: 24px;
+                    height: 24px;
+                    padding: 4px;
+                    transition-duration: .15s;
+                }
+                .select .rotate{
+                    transform: rotate(180deg);
+                }
+                .select span:active{
+                    background-color: rgba(0, 0, 0, 0.036);
+
+                }
+                .select svg:active{
+                    background-color: rgba(0, 0, 0, 0.036);
+                    }
+                .select ul{
+                    width: 70%;
+                    height: 200px;
+                    overflow: auto;
+                    background-color: white;
+                    margin-top: 5px;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    border-radius: 0px;
+                    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                    font-size: 14px;
+                    font: normal 80% 'Montserrat';
+                    z-index: 10;
+                }
+                .select ul li{
+                    list-style: none;
+                    padding: 7px;
+                    margin-left: -40px;
+                    padding-left: 20px;
+                    cursor: default;
+                }
+                .select ul li:hover{
+                    background-color: rgba(0, 0, 0, 0.036);
+                }
+                .select ul::-webkit-scrollbar{
+                    width: 15px;
+
+                }
+                .select ul::-webkit-scrollbar-thumb{
+                    background-color: #6F287C;
+                    border-radius: 0px;
+                    margin: 10px;
+                    width: 2px;
+                    border: 6px solid white;
+                }
+
+                .flag{
+                    position: absolute;
+                    top: 100px; 
+                    left: 30px;
+                    z-index:-1;
+
+                }
+
+                .box{
+                    background-color: rgba(0, 0, 0, .05);
+                    
+                    height: 270px;
+                    width: 640px;
+                    margin: 0;
+                    padding: 0;
+                    border: 1px solid rgba(0, 0, 0, .05);
+                    position: absolute;
+                    top: 50px; 
+                    left: 0px;
+                    z-index:-3;
+
+                }
+
+                .box_jos{
+
+                    background-color: #5E5E5E;
+                    
+                    height: 40px;
+                    width: 100%;
+                    margin: 0;
+                    padding: 0;
+                    position: absolute;
+                    bottom: 0px;
+                    left: 0px;
+                    z-index:-3;
+                }
+
+                .box_sus2{
+
+                    background-color: #6F287C;
+
+                    height: 32px;
+                    width: 100%;
+                    margin: 0;
+                    padding: 0;
+                    position: absolute;
+                    top: 220px;
+                    right: 0px;
+                    z-index:-3;
+                }
+                .box_sus1{
+
+                    background-color: #6F287C;
+
+                    height: 215px;
+                    width: 100%;
+                    margin: 0;
+                    padding: 0;
+                    position: absolute;
+                    top: 0px;
+                    right: 0px;
+                    z-index:-3;
+                }
+
+                ul.jos{
+                    list-style-type: none;
+                    color: rgba(255, 255, 255, .3);
+                    position: fixed;
+                    width: 92%;
+                    z-index: 9759;
+                    bottom: 2px;
+                    text-align: center;
+                    
+                    
+                }
+
+                ul.jos li{
+                    
+                    font-size: 8px;
+                    display: inline;
+                    padding: 0px 170px;
+                    z-index:-56;
+                }
+
+                ul.sel-buy{
+                    list-style-type: none;
+                    position: absolute;
+                    
+                    top: 330px;
+                    right: 460px;
+                    text-align: center;
+                    z-index: -2;
+                }
+
+                ul.sel-buy li{
+                    width: 100%;
+                    font-size: 12px;
+                    display: inline;
+                    padding: 0px 10px;
+                    font: bold 80% 'Montserrat';
+                    
+                }
+
+                #value1{
+                    position: absolute;
+                    top: 102px;
+                    right: 220px;
+                    z-index: -2
+                }
+                #value2{
+                    position: absolute;
+                    top: 142px;
+                    right: 220px;
+                    z-index: -2;
+                }
+                #value3{
+                    position: absolute;
+                    top: 182px;
+                    right: 220px;
+                    z-index: -2;
+                }
+                #value4{
+                    position: absolute;
+                    top: 222px;
+                    right: 220px;
+                    z-index: -2;
+                }
+                #value5{
+                    position: absolute;
+                    top: 262px;
+                    right: 220px;
+                    z-index: -2;
+                }
+
+
+                .logo{
+                    height: 215px;
+                    width: 100%;
+                    margin: 0;
+                    padding: 0;
+                    position: fixed;
+                    top: 20px;
+                    margin-left: 620px;
+                    z-index: 15;
+                }
+
+
+            .meniu{
+                width: 300px;
+                padding: 3px;
+                background-position-x: 400px;
+            }
+
+
+
+
+        </style>
+
+	</head>
+    <body>
+            <div class="logo">
+                <img src="{% static 'logo.png' %}" width="280">
+            </div>
+            <div class="menu">
+                <ul class="nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html">IRCC</a></li>
+                    <li><a href="index.html">ROBOR 3M</a></li>
+                    <li><a href="index.html">Curs INFOREURO</a></li>
+                    <li><a href="index.html">Servicii</a></li>
+                    <li><a href="index.html">Filiale</a></li>
+                    <li><a href="index.html">Contacte</a></li>
+                </ul>
+                <div class="box_jos"></div>
+                <div class="box_sus1"></div>
+                <div class="box_sus2"></div>
+                <ul class="jos">
+                    <li><b href="index.html">Copyright © 2022 - 2023 - All Rights Reserved</b></li>
+                    <li><b href="index.html">XML Sitemap | Privacy</b></li>
+                </ul>
+                
+            </div>
+                <ul class="sel-buy">
+                    <li><c href="index.html">BUYING</c></li>
+                    <li><c href="index.html">SELLING</c></li>
+                </ul>
+            
+            
+            <div class="select">
+                <span>
+                    Banca Naționala a României  <!-- First Option -->
+                </span>
+                
+                <!-- icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="3 3 18 18"><path d="M12 15.375 6 9.375 7.4 7.975 12 12.575 16.6 7.975 18 9.375Z"/></svg>
+                <div>  
+
+                    <ul style="display: none;">
+                        <li href="index.html">Banca Nationala a Romaniei</li>
+                        <li href="index.html">Alpha Bank</li>
+                        <li href="index.html">BCR - Banca Comerciala Romana</li>
+                        <li href="index.html">Banca Romaneasca</li>
+                        <li href="index.html">Intesa Sanpaolo Bank</li>
+                        <li href="index.html">Banca Transilvania</li>
+                        <li href="index.html">BRD Groupe Societe Generale</li>
+                        <li href="index.html">CEC Bank</li>
+                        <li href="index.html">First Bank</li>
+                        <li href="index.html">Garanti Bank</li>
+                        <li href="index.html">Idea Bank</li>
+                        <li href="index.html">ProCredit Bank</li>
+                        <li href="index.html">Bank Leumi România</li>
+                        <li href="index.html">OTP Bank Romania</li>
+                        <li href="index.html">Raiffeisen Bank</li>
+                        <li href="index.html">UniCredit Bank</li>
+                    </ul>
+                        <div class="in">
+                            <input type="text" id="value1" required minlength="4" maxlength="20" size="42" placeholder="0.00" style="text-align:right;"/>
+                            <input type="text" id="value2" required minlength="4" maxlength="20" size="42" placeholder="0.00" style="text-align:right;"/>
+                            <input type="text" id="value3" required minlength="4" maxlength="20" size="42" placeholder="0.00" style="text-align:right;"/>
+                            <input type="text" id="value4" required minlength="4" maxlength="20" size="42" placeholder="0.00" style="text-align:right;"/>
+                            <input type="text" id="value5" required minlength="4" maxlength="20" size="42" placeholder="0.00" style="text-align:right;"/>
+        
+        
+                        </div>
+                            <div class="flag">
+                                <img src="{% static 'flags.png' %}" alt="flags" width="45" height="186">
+                            </div>
+                            <div class="box"></div>
+                            
+                    
+                        </div>
+                        
+                    </div>	
+            </style>
+        </body>
+        <script>
+            var select = document.querySelector('.select')
+            var span = document.querySelector('.select span')
+            var selectSvg = document.querySelector('.select svg')
+            var ul = document.querySelector('.select ul')
+            var li = document.querySelectorAll('.select ul li')
+        
+            // give first value by default
+            select.setAttribute('value', li[0].innerText)
+        
+            // now add onClick attribute to each list
+            for(var i = 0; i < li.length; i++){
+                li[i].setAttribute('onClick', 'changeValue(this)')
+            }
+        
+            // show and hide of list
+            selectSvg.onclick = () => span.click()
+            span.onclick = () => {
+                if(ul.style.display === 'none'){
+                    ul.style.display = 'block'
+                    selectSvg.classList.add('rotate')
+                }else{
+                    ul.style.display = 'none'
+                    selectSvg.classList.remove('rotate')
+                }
+            }
+        
+            // now create a function that change values
+            function changeValue(e){
+                span.innerText = e.innerText
+                select.setAttribute('value', e.innerText)
+                ul.style.display = 'none'
+                selectSvg.classList.remove('rotate')
+            }
+        </script>
+        
+        </html>
