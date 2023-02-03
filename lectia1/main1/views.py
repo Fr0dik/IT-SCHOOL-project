@@ -79,7 +79,7 @@ def currency_stat(request):
 
     plot_div = plot([Scatter(x=df['Year'], y=df['Year Close'],
                         mode='lines', name='Currency USD/EUR',
-                        opacity=0.8, marker_color='green')],
+                        opacity=0.8, marker_color='purple')],
                         output_type='div',
                     )
 
