@@ -23,8 +23,8 @@
                 position: absolute;
                 width: 100%;
                 z-index: 11;
-                top: 208px;
-                right: -10px;
+                top: 209px;
+                right: -13px;
                 text-align: center;
 
 
@@ -34,7 +34,7 @@
 
                 ul.nav li{
                 display: inline;
-                padding: 6px 20px;
+                padding: 6px 25px;
                 width: 50px;
                 height: 20px;
                                 
@@ -43,7 +43,7 @@
 
                 a{
                 color: #ce8bda;
-                border-radius: 6px;
+                padding: 7.5px;
                 text-decoration: none;
                 font-size: 12px;
                 font: normal;
@@ -54,14 +54,17 @@
                 
                 }
 
-                a:hover{
+                a.navigation:hover, a.ex1:active{
                 color: white;
-                border-radius: 6px;
+                padding: 7.5px;
                 text-decoration: none;
                 font-size: 12px;
+                
+                background-color: rgba(255, 255, 255, .2);
 
                 
                 }
+
 
 
 
@@ -112,7 +115,7 @@
                     }
                 .select ul{
                     width: 70%;
-                    height: 200px;
+                    height: auto;
                     overflow: auto;
                     background-color: white;
                     margin-top: 5px;
@@ -178,7 +181,7 @@
                     margin: 0;
                     padding: 0;
                     position: absolute;
-                    bottom: 0px;
+                    top: 1580px;
                     left: 0px;
                     z-index:-3;
                 }
@@ -213,10 +216,12 @@
                 ul.jos{
                     list-style-type: none;
                     color: rgba(255, 255, 255, .3);
-                    position: fixed;
+                    position: absolute;
+                    top: 1568px;
+                    left: 35px;
                     width: 92%;
                     z-index: 9759;
-                    bottom: 2px;
+                    
                     text-align: center;
                     
                     
@@ -230,55 +235,9 @@
                     z-index:-56;
                 }
 
-                ul.sel-buy{
-                    list-style-type: none;
-                    position: absolute;
-                    
-                    top: 330px;
-                    right: 460px;
-                    text-align: center;
-                    z-index: -2;
-                }
+                
 
-                ul.sel-buy li{
-                    width: 100%;
-                    font-size: 12px;
-                    display: inline;
-                    padding: 0px 10px;
-                    font: bold 80% 'Montserrat';
-                    
-                }
-
-                #value1{
-                    position: absolute;
-                    top: 102px;
-                    right: 220px;
-                    z-index: -2
-                }
-                #value2{
-                    position: absolute;
-                    top: 142px;
-                    right: 220px;
-                    z-index: -2;
-                }
-                #value3{
-                    position: absolute;
-                    top: 182px;
-                    right: 220px;
-                    z-index: -2;
-                }
-                #value4{
-                    position: absolute;
-                    top: 222px;
-                    right: 220px;
-                    z-index: -2;
-                }
-                #value5{
-                    position: absolute;
-                    top: 262px;
-                    right: 220px;
-                    z-index: -2;
-                }
+                
 
 
                 .logo{
@@ -286,10 +245,66 @@
                     width: 100%;
                     margin: 0;
                     padding: 0;
-                    position: fixed;
+                    position: absolute;
                     top: 20px;
                     margin-left: 620px;
                     z-index: 15;
+                }
+
+                .img{
+                    position: absolute;
+                    top: 308px;
+                    left: 450px;
+
+
+                }
+
+                p.text1{
+                    min-height: 50px;
+                    width: 410px;
+                    position: absolute;
+                    top: 290px;
+                    left: 708px;
+                    border: 0px solid #f44;
+                    padding: 5px 10px;
+                    text-align: justify;
+                    
+                    box-sizing: border-box;
+
+                    font-size: 12px;
+                }
+
+                p.text2{
+                    min-height: 50px;
+                    width: 680px;
+                    position: absolute;
+                    top: 460px;
+                    left: 440px;
+                    border: 0px solid #f44;
+                    padding: 5px 10px;
+                    text-align: justify;
+                    
+                    box-sizing: border-box;
+
+                    font-size: 12px;
+                }
+
+                .head{
+                    position: absolute;
+                    top: 255px;
+                    left: 690px;
+
+
+
+                }
+                #serv{
+                    color: white;
+                    padding: 7.5px;
+                    text-decoration: none;
+                    font-size: 12px;
+                    
+                    background-color: rgba(255, 255, 255, .2);
+
                 }
 
 
@@ -311,74 +326,77 @@
             </div>
             <div class="menu">
                 <ul class="nav">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="index.html">IRCC</a></li>
-                    <li><a href="index.html">ROBOR 3M</a></li>
-                    <li><a href="index.html">Curs INFOREURO</a></li>
-                    <li><a href="index.html">Servicii</a></li>
-                    <li><a href="index.html">Filiale</a></li>
-                    <li><a href="index.html">Contacte</a></li>
+                    <li><a class="navigation" id="serv" href="{% url 'home' %}">Home</a></li>
+
+                    <li><a class="navigation" href="{% url 'currency' %}">Currency Converter</a></li>
+                    <li><a class="navigation" href="{% url 'currency_stat' %}">Currency Statistics</a></li>
+                    <li><a class="navigation" href="{% url 'services' %}">Services</a></li>
+                    <li><a class="navigation" href="{% url 'contacts' %}">Contacts</a></li>
                 </ul>
                 <div class="box_jos"></div>
                 <div class="box_sus1"></div>
                 <div class="box_sus2"></div>
                 <ul class="jos">
-                    <li><b href="index.html">Copyright © 2022 - 2023 - All Rights Reserved</b></li>
-                    <li><b href="index.html">XML Sitemap | Privacy</b></li>
+                    <li><b href="">Copyright © 2022 - 2023 - All Rights Reserved</b></li>
+                    <li><b href="">XML Sitemap | Privacy</b></li>
                 </ul>
                 
             </div>
-                <ul class="sel-buy">
-                    <li><c href="index.html">BUYING</c></li>
-                    <li><c href="index.html">SELLING</c></li>
-                </ul>
-            
-            
-            <div class="select">
-                <span>
-                    Banca Naționala a României  <!-- First Option -->
-                </span>
                 
-                <!-- icon -->
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="3 3 18 18"><path d="M12 15.375 6 9.375 7.4 7.975 12 12.575 16.6 7.975 18 9.375Z"/></svg>
-                <div>  
+            <p class="head"><strong>5 Tips To Save Money</strong> <br> <br></p>
+            
+            <div class="img">
+                <img src="{% static '5_tips_to_save_money_article_post_thumb.jpg' %}" width="250">
 
-                    <ul style="display: none;">
-                        <li href="index.html">Banca Nationala a Romaniei</li>
-                        <li href="index.html">Alpha Bank</li>
-                        <li href="index.html">BCR - Banca Comerciala Romana</li>
-                        <li href="index.html">Banca Romaneasca</li>
-                        <li href="index.html">Intesa Sanpaolo Bank</li>
-                        <li href="index.html">Banca Transilvania</li>
-                        <li href="index.html">BRD Groupe Societe Generale</li>
-                        <li href="index.html">CEC Bank</li>
-                        <li href="index.html">First Bank</li>
-                        <li href="index.html">Garanti Bank</li>
-                        <li href="index.html">Idea Bank</li>
-                        <li href="index.html">ProCredit Bank</li>
-                        <li href="index.html">Bank Leumi România</li>
-                        <li href="index.html">OTP Bank Romania</li>
-                        <li href="index.html">Raiffeisen Bank</li>
-                        <li href="index.html">UniCredit Bank</li>
-                    </ul>
-                        <div class="in">
-                            <input type="text" id="value1" required minlength="4" maxlength="20" size="42" placeholder="0.00" style="text-align:right;"/>
-                            <input type="text" id="value2" required minlength="4" maxlength="20" size="42" placeholder="0.00" style="text-align:right;"/>
-                            <input type="text" id="value3" required minlength="4" maxlength="20" size="42" placeholder="0.00" style="text-align:right;"/>
-                            <input type="text" id="value4" required minlength="4" maxlength="20" size="42" placeholder="0.00" style="text-align:right;"/>
-                            <input type="text" id="value5" required minlength="4" maxlength="20" size="42" placeholder="0.00" style="text-align:right;"/>
-        
-        
-                        </div>
-                            <div class="flag">
-                                <img src="{% static 'flags.png' %}" alt="flags" width="45" height="186">
-                            </div>
-                            <div class="box"></div>
-                            
-                    
-                        </div>
+            </div>
+
+            <p class="text1">
+                What’s the toughest aspect of planning a foreign trip? Budgeting? Booking flights and hotels, or planning an itinerary? While seasoned travellers may not find these tasks too taxing, they may admit that managing foreign currency exchange can be quite a chore.<br><br>
+
+            Sometimes even business owners who engage in trade overseas, too, might face some difficulty navigating foreign currency exchange rates. However, regular practice allows them to get familiar with the rates and how they work.</p>
+
+            <p class="text2">But for most people, it remains a challenging aspect of international money transfers. Even those who work abroad often find the intricacies of currency exchange quite confusing.<br><br>
+
+            Whether it is for travel purposes or sending remittances back home, you need to have an understanding of the dynamic currency conversion involved. Here is a guide on how to make the most of the conversion charges.<br><br>
+            Follow these five simple tips if you wish to save on your foreign currency exchange.<br><br>
+
+            <strong>1. Choose the right currency</strong><br><br>
+            The first thing to do is to find out the correct quote currency. Wondering what a quote currency is? In any foreign currency exchange, there is an equation between a pair of currencies. The currency you possess is the base currency and the currency you desire is the quote currency.<br>
+
+            While travelling abroad, it is usually advised to convert your base currency into a popular quote currency, such as the dollar (USD) or the euro (EUR), which can later be converted into the currency that is widely used at your destination country.<br>
+
+            However, you must closely watch the quote currency you first convert into. In some countries, EUR may work out to be more profitable than USD. To determine which is more ideal, you would need to review the current conversion charges between your first quote currency and the actual quote currency.<br><br>
+
+            <strong>2. Choose the right product</strong><br><br>
+            While applying for foreign currency exchange, you would have various options to store the money. It can be obtained via cash, credit/debit card, Forex card, travellers’ cheques, etc. Each of these channels has their own pros and cons.<br>
+
+            While traveller’s cheques have largely become obsolete, some still rely on them as they can be encashed at any nearby bank and are a better alternative to carrying cash. Many travellers vouch for multiple currency Forex cards, but they only provide loading of 15-20 currencies. Carrying an international credit or debit card is not a bad option, but bear in mind that you maybe charged foreign transaction fees, which can be avoided with Forex cards.<br>
+
+            If you are planning to have a peaceful holiday in your destination country, you must check out the foreign transaction fees of all the products and choose the option that offers you the best value for money.<br><br>
+
+            <strong>3. Choose the right channel</strong><br><br>
+            If you look around, you can find a lot of vendors that provide currency conversion services. However, it would be a mistake to assume that all of them trade at the same rates. Different channels have different conversion charges.<br>
+
+            For example traditionally financial institutions charge a higher foreign exchange rate in comparison to international money transfer operators. While money transfer operators may seem more affordable, one must be cautious and ensure absolute security of their fund transfers. For hassle free, convenient and safe fund transfers you can choose trusted money transfer operators like Xpress Money, which offers a robust network of over 200,000 agent partner locations across the globe and competitive foreign currency exchange rates.<br><br>
+
+            <strong>4. Choose the right time</strong><br><br>
+            If you compare foreign exchange rates over a few days, you will notice that the rates are dynamic, and each time you might find a slight variation in the equation of your selected currencies. If you pay close attention, you can make the most of this fluidity as currency conversion charges fluctuate through the day.<br>
+
+            Authentic and advanced online marketplaces also offer a feature of locking in the price you see for a selected time span. So, if you are wondering how to avoid currency conversion fees, the most cost-efficient way is to make sure your conversion happens at the ideal time.<br><br>
+
+            Also Read: What’s The Best Time to Send Money Home?<br><br>
+
+            <strong>5. Watch out for hidden charges</strong><br><br>
+            It might sound like stating the obvious, but a lot can be slipped in under the label of ‘hidden charges’ when dealing with foreign currency exchange. For instance, most money transfer channels may charge a service fee along with the foreign transaction fee.<br>
+
+            A common mistake that many travellers make is to try and obtain the currency after landing at the destination airport. Research indicates that airports hike currency conversion charges by 30 percent at the very minimum. A word of caution is to always be vigilant of hidden charges.<br>
+
+            Remember, when dealing with currency conversion, even a slight difference in the exchange rate can impact the final output of the quote currency. So, to ensure you get the best value for your fund transfers, keep these five tips handy and save on your foreign currency exchange.</p>
+           
+               
+                
                         
-                    </div>	
+            </div>	
             </style>
         </body>
         <script>
@@ -417,4 +435,4 @@
             }
         </script>
         
-        </html>
+    </html>
