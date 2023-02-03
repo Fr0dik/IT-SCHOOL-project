@@ -1,0 +1,373 @@
+{% load static %}
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>PIG EXCHANGE</title>
+        <style>
+            
+            
+            body{
+                    
+
+                
+                font-family: 'Montserrat', sans-serif;
+                z-index: -8;
+
+
+                }
+
+                ul.nav{
+                list-style-type: none;
+                display: inline-block;
+                position: absolute;
+                width: 100%;
+                z-index: 11;
+                top: 209px;
+                right: -13px;
+                text-align: center;
+
+
+                
+                
+                }
+
+                ul.nav li{
+                display: inline;
+                padding: 6px 25px;
+                width: 50px;
+                height: 20px;
+                                
+
+                }
+
+                a{
+                color: #ce8bda;
+                padding: 7.5px;
+                text-decoration: none;
+                font-size: 12px;
+                font: normal;
+                text-decoration: none;
+                text-align: center;
+                list-style-type: none;
+                display: inline;
+                
+                }
+
+                a.navigation:hover, a.ex1:active{
+                color: white;
+                padding: 7.5px;
+                text-decoration: none;
+                font-size: 12px;
+                
+                background-color: rgba(255, 255, 255, .2);
+
+                
+                }
+
+
+
+                .select{
+                    
+                    /* for center */
+                    position: absolute;
+                    top: 220px; 
+                    left: 460px;
+                    margin: auto;
+                    margin-top: 60px;
+                    z-index:4;
+                }
+                .select span{
+                    background-color: white;
+                    width: 100%;
+                    line-height: 35px;
+                    padding: 0px 15px;
+                    border: 1px solid #EDEDED;
+                    font-size: 14px;
+                    font-weight: 500;
+                    cursor: default;
+                    border-radius: 0px;
+                    display: block;
+                    width: 610px;
+                    height: auto;
+                    font: normal;
+                    z-index: 9;
+                }
+                .select svg{
+                    position: absolute;
+                    top: 4px;
+                    right: 5px;
+                    width: 24px;
+                    height: 24px;
+                    padding: 4px;
+                    transition-duration: .15s;
+                }
+                .select .rotate{
+                    transform: rotate(180deg);
+                }
+                .select span:active{
+                    background-color: rgba(0, 0, 0, 0.036);
+
+                }
+                .select svg:active{
+                    background-color: rgba(0, 0, 0, 0.036);
+                    }
+                .select ul{
+                    width: 70%;
+                    height: 200px;
+                    overflow: auto;
+                    background-color: white;
+                    margin-top: 5px;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    border-radius: 0px;
+                    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                    font-size: 14px;
+                    font: normal 80% 'Montserrat';
+                    z-index: 10;
+                }
+                .select ul li{
+                    list-style: none;
+                    padding: 7px;
+                    margin-left: -40px;
+                    padding-left: 20px;
+                    cursor: default;
+                }
+                .select ul li:hover{
+                    background-color: rgba(0, 0, 0, 0.036);
+                }
+                .select ul::-webkit-scrollbar{
+                    width: 15px;
+
+                }
+                .select ul::-webkit-scrollbar-thumb{
+                    background-color: #6F287C;
+                    border-radius: 0px;
+                    margin: 10px;
+                    width: 2px;
+                    border: 6px solid white;
+                }
+
+                .flag{
+                    position: absolute;
+                    top: 100px; 
+                    left: 30px;
+                    z-index:-1;
+
+                }
+
+                /* .box{
+                    background-color: rgba(0, 0, 0, .05);
+                    
+
+                    margin: 0;
+                    padding: 0;
+                    border: 3px solid rgba(0, 0, 0, .2);
+                    position: absolute;
+                    top: 280px; 
+                    left: 400px;
+                    z-index:-3;
+
+                } */
+
+                .box_jos{
+
+                    background-color: #5E5E5E;
+                    
+                    height: 35px;
+                    width: 100%;
+                    margin: 0;
+                    padding: 0;
+                    position: absolute;
+                    bottom: -3px;
+                    left: 0px;
+                    z-index:-3;
+                }
+
+                .box_sus2{
+
+                    background-color: #6F287C;
+
+                    height: 32px;
+                    width: 100%;
+                    margin: 0;
+                    padding: 0;
+                    position: absolute;
+                    top: 220px;
+                    right: 0px;
+                    z-index:-3;
+                }
+                .box_sus1{
+
+                    background-color: #6F287C;
+
+                    height: 215px;
+                    width: 100%;
+                    margin: 0;
+                    padding: 0;
+                    position: absolute;
+                    top: 0px;
+                    right: 0px;
+                    z-index:-3;
+                }
+
+                ul.jos{
+                    list-style-type: none;
+                    color: rgba(255, 255, 255, .3);
+                    position: absolute;
+                    bottom: -8px;
+                    right: 53px;
+                    width: 92%;
+                    z-index: 9759;
+                   
+                    text-align: center;
+                    
+                    
+                }
+
+                ul.jos li{
+                    
+                    font-size: 8px;
+                    display: inline;
+                    padding: 0px 170px;
+                    z-index:-56;
+                }
+
+
+
+
+
+                h2{
+                    font-size: 14px;
+                    text-align: center;
+                    font: normal;
+                    color: gray;
+                    list-style-type: none;
+                    display: inline-block;
+                    position: absolute;
+                    width: 100%;
+                    top: 590px;
+
+
+
+                }
+                
+
+                .logo{
+                    height: 215px;
+                    width: 100%;
+                    margin: 0;
+                    padding: 0;
+                    position: absolute;
+                    top: 20px;
+                    margin-left: 620px;
+                    z-index: 15;
+                }
+
+                #serv{
+                    color: white;
+                    padding: 7.5px;
+                    text-decoration: none;
+                    font-size: 12px;
+                    
+                    background-color: rgba(255, 255, 255, .2);
+
+                }
+                
+                .stat{
+
+                    position: absolute;
+                    top: 255px; 
+                    left: 430px;
+                    z-index:-3;
+                    height: 300px;
+                }
+
+                .currency{
+                    position: absolute;
+                    top: 275px; 
+                    left: 515px;
+
+
+                }
+
+
+
+
+            .meniu{
+                width: 300px;
+                padding: 3px;
+                background-position-x: 400px;
+            }
+
+
+
+
+        </style>
+
+	</head>
+    <body>
+            <div class="logo">
+                <img src="{% static 'logo.png' %}" width="280">
+            </div>
+            <div class="menu">
+                <ul class="nav">
+                    <li><a class="navigation" href="{% url 'home' %}">Home</a></li>
+
+                    <li><a class="navigation" href="{% url 'currency' %}">Currency Converter</a></li>
+                    <li><a class="navigation" id="serv" href="{% url 'currency_stat' %}">Currency Statistics</a></li>
+                    <li><a class="navigation" href="{% url 'services' %}">Services</a></li>
+                    <li><a class="navigation" href="{% url 'contacts' %}">Contacts</a></li>
+                </ul>
+                <div class="box_jos"></div>
+                <div class="box_sus1"></div>
+                <div class="box_sus2"></div>
+                <ul class="jos">
+                    <li><b href="">Copyright © 2022 - 2023 - All Rights Reserved</b></li>
+                    <li><b href="">XML Sitemap | Privacy</b></li>
+                </ul>
+                
+            </div>
+            <p class="currency"><strong>EUR/USD exchange rate historiacl graph by years (2000-2023)</strong></p>
+
+            <div class='stat'>
+                {% autoescape off %}
+                {{ plot_div }}
+                {% endautoescape %}
+                <!-- {% if fig.update_layout %}
+                <div style="width:600;height:500">
+                {{ fig.update_layout }}
+                </div>
+                {% endif %} -->
+            </div>
+                
+            
+            
+            <!-- <div class="box">
+                <img src="{% static 'adress.jpg' %}" height="300" width="765">
+            </div>
+                            
+                <h2 class="adress">3801 Oliver, Wichita, KS 67210, Statele Unite ale Americii</h2>     -->
+                    </div>
+                    
+                </div>	
+            </style>
+        </body>
+        
+        
+        </html>
+
+<!-- <!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>test</title>
+    </head>
+    <body>
+    {% autoescape off %}
+    {{ plot_div }}
+    {% endautoescape %}
+    </body>
+</html> -->

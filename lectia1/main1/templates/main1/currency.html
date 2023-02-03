@@ -1,0 +1,816 @@
+{% load static %}
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>PIG EXCHANGE</title>
+        <style>
+            *, *:before, *:after {
+            box-sizing: border-box;
+            }
+            
+            body{
+                    
+
+                -webkit-font-smoothing: antialiased;
+                font-family: 'Montserrat', sans-serif;
+                z-index: -8;
+
+
+                }
+
+                ul.nav{
+                list-style-type: none;
+                display: inline-block;
+                position: absolute;
+                width: 100%;
+                z-index: 11;
+                top: 209px;
+                right: 15px;
+                text-align: center;
+
+
+                
+                
+                }
+
+                ul.nav li{
+                display: inline;
+                padding: 6px 25px;
+                width: 50px;
+                height: 20px;
+                                
+
+                }
+
+                a{
+                color: #ce8bda;
+                padding: 7.5px;
+                text-decoration: none;
+                font-size: 12px;
+                font: normal;
+                text-decoration: none;
+                text-align: center;
+                list-style-type: none;
+                display: inline;
+                
+                }
+
+                a.navigation:hover, a.ex1:active{
+                color: white;
+                padding: 7.5px;
+                text-decoration: none;
+                font-size: 12px;
+                
+                background-color: rgba(255, 255, 255, .2);
+
+                
+                }
+
+
+
+                .select{
+                    
+                    /* for center */
+                    position: absolute;
+                    top: 210px; 
+                    left: 450px;
+                    margin: auto;
+                    margin-top: 60px;
+                    z-index:120;
+                }
+                .select span{
+                    background-color: white;
+                    width: 100%;
+                    line-height: 35px;
+                    padding: 0px 15px;
+                    border: 1px solid #EDEDED;
+                    font-size: 14px;
+                    font-weight: 500;
+                    cursor: default;
+                    border-radius: 0px;
+                    display: block;
+                    width: 610px;
+                    height: auto;
+                    font: normal;
+                    z-index: 9;
+                }
+                .select svg{
+                    position: absolute;
+                    top: 4px;
+                    right: 5px;
+                    width: 24px;
+                    height: 24px;
+                    padding: 4px;
+                    transition-duration: .15s;
+                }
+                .select .rotate{
+                    transform: rotate(180deg);
+                }
+                .select span:active{
+                    background-color: rgba(0, 0, 0, 0.036);
+
+                }
+                .select svg:active{
+                    background-color: rgba(0, 0, 0, 0.036);
+                    }
+                .select ul{
+                    width: 70%;
+                    height: auto;
+                    overflow: auto;
+                    background-color: white;
+                    margin-top: 5px;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    border-radius: 0px;
+                    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                    font-size: 14px;
+                    font: normal 80% 'Montserrat';
+                    z-index: 10;
+                }
+                .select ul li{
+                    list-style: none;
+                    padding: 7px;
+                    margin-left: -40px;
+                    padding-left: 20px;
+                    cursor: default;
+                }
+                .select ul li:hover{
+                    background-color: rgba(0, 0, 0, 0.036);
+                }
+                .select ul::-webkit-scrollbar{
+                    width: 15px;
+
+                }
+                .select ul::-webkit-scrollbar-thumb{
+                    background-color: #6F287C;
+                    border-radius: 0px;
+                    margin: 10px;
+                    width: 2px;
+                    border: 6px solid white;
+                }
+
+
+
+                .suma{
+                    
+                    /* for center */
+                    position: absolute;
+                    top: 395px; 
+                    left: 562px;
+                    margin: auto;
+                    margin-top: 60px;
+                    border: 1px solid rgba(0, 0, 0, .2);    
+
+                    font: normal;
+                    z-index: 50;
+                }
+
+
+                h2{
+                    position: absolute;
+                    top: 520px; 
+                    left: 500px;
+                    margin: auto;
+                    margin-top: 60px;
+                    font-size: 15px;
+                    font: normal;
+                    color: #6F287C;
+
+                    z-index: 50;
+
+                }
+
+
+                .from{
+                    
+                    /* for center */
+                    position: absolute;
+                    top: 250px; 
+                    left: 560px;
+                    margin: auto;
+                    margin-top: 60px;
+                    z-index:100;
+                    
+                }
+
+
+                .from span{
+                    background-color: white;
+                    width: 100%;
+                    line-height: 28px;
+                    padding: 0px 15px;
+                    border: 1px solid rgba(0, 0, 0, .4);
+                    font-size: 12px;
+                    font-weight: 500;
+                    cursor: default;
+                    border-radius: 0px;
+                    display: block;
+                    width: 400px;
+                    height: 30px;
+                    font: normal;
+                    z-index: 50;
+                    text-align: center;
+                }
+                .from svg{
+                    position: absolute;
+                    top: 3px;
+                    right: 6px;
+                    width: 20px;
+                    height: 20px;
+                    padding: 1px;
+                    transition-duration: .15s;
+                }
+                .from .rotate{
+                    transform: rotate(180deg);
+                }
+                .from span:active{
+                    background-color: rgba(0, 0, 0, 0.036);
+
+                }
+                .from svg:active{
+                    background-color: rgba(0, 0, 0, 0.036);
+                    }
+                .from ul{
+                    width: 390px;
+                    height: auto;
+                    overflow: auto;
+                    background-color: white;
+                    margin-top: 5px;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    border-radius: 0px;
+                    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                    font-size: 10px;
+                    font: normal 80% 'Montserrat';
+                    text-align: center;
+                    
+                }
+                .from ul li{
+                    list-style: none;
+                    padding: 7px;
+                    margin-left: -40px;
+                    padding-left: 20px;
+                    cursor: default;
+                }
+                .from ul li:hover{
+                    background-color: rgba(0, 0, 0, 0.036);
+                }
+                .from ul::-webkit-scrollbar{
+                    width: 50px;
+
+                }
+                .from ul::-webkit-scrollbar-thumb{
+                    background-color: #6F287C;
+                    border-radius: 0px;
+                    margin: 5px;
+                    width: 1px;
+                    border: 1px solid white;
+                }
+
+
+                .to{
+                    
+                    /* for center */
+                    position: absolute;
+                    top: 320px; 
+                    left: 560px;
+                    margin: auto;
+                    margin-top: 60px;
+                    z-index:99;
+
+                }
+
+
+                .to span{
+                    background-color: white;
+                    width: 100%;
+                    line-height: 28px;
+                    padding: 0px 15px;
+                    border: 1px solid rgba(0, 0, 0, .4);
+                    font-size: 12px;
+                    font-weight: 500;
+                    text-align: center;
+                    cursor: default;
+                    border-radius: 0px;
+                    display: block;
+                    width: 400px;
+                    height: 30px;
+                    font: normal;
+                    z-index: 50;
+                }
+                .to svg{
+                    position: absolute;
+                    top: 3px;
+                    right: 6px;
+                    width: 20px;
+                    height: 20px;
+                    padding: 1px;
+                    transition-duration: .15s;
+                }
+                .to .rotate{
+                    transform: rotate(180deg);
+                }
+                .to span:active{
+                    background-color: rgba(0, 0, 0, 0.036);
+
+                }
+                .to svg:active{
+                    background-color: rgba(0, 0, 0, 0.036);
+                    }
+                .to ul{
+                    width: 390px;
+                    height: auto;
+                    overflow: auto;
+                    background-color: white;
+                    margin-top: 5px;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    border-radius: 0px;
+                    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                    font-size: 10px;
+                    font: normal 80% 'Montserrat';
+                    text-align: center;
+                    
+                }
+                .to ul li{
+                    list-style: none;
+                    padding: 7px;
+                    margin-left: -40px;
+                    padding-left: 20px;
+                    cursor: default;
+                }
+                .to ul li:hover{
+                    background-color: rgba(0, 0, 0, 0.036);
+                }
+                .to ul::-webkit-scrollbar{
+                    width: 50px;
+
+                }
+                .to ul::-webkit-scrollbar-thumb{
+                    background-color: #6F287C;
+                    border-radius: 0px;
+                    margin: 5px;
+                    width: 1px;
+                    border: 1px solid white;
+                }
+
+
+
+
+                .box{
+                    background-color: rgba(0, 0, 0, .05);
+                    
+                    height: 405px;
+                    width: 640px;
+                    margin: 0;
+                    padding: 0;
+                    border: 1px solid rgba(0, 0, 0, .05);
+                    position: absolute;
+                    top: 275px; 
+                    left: 450px;
+                    z-index:-100;
+
+                }
+
+                .box_jos{
+
+                    background-color: #5E5E5E;
+                    
+                    height: 35px;
+                    width: 100%;
+                    margin: 0;
+                    padding: 0;
+                    position: absolute;
+                    bottom: 0px;
+                    left: 0px;
+                    z-index:-3;
+                }
+
+                .box_sus2{
+
+                    background-color: #6F287C;
+
+                    height: 32px;
+                    width: 100%;
+                    margin: 0;
+                    padding: 0;
+                    position: absolute;
+                    top: 220px;
+                    right: 0px;
+                    z-index:-3;
+                }
+                .box_sus1{
+
+                    background-color: #6F287C;
+
+                    height: 215px;
+                    width: 100%;
+                    margin: 0;
+                    padding: 0;
+                    position: absolute;
+                    top: 0px;
+                    right: 0px;
+                    z-index:-3;
+                }
+
+                ul.jos{
+                    list-style-type: none;
+                    color: rgba(255, 255, 255, .3);
+                    position: absolute;
+                    bottom: -5px;
+                    left: 50px;
+                    width: 92%;
+                    z-index: 9759;
+                   
+                    text-align: center;
+                    
+                    
+                }
+
+                ul.jos li{
+                    
+                    font-size: 8px;
+                    display: inline;
+                    padding: 0px 170px;
+                    z-index:-56;
+                }
+
+
+               
+
+                .logo{
+                    height: 215px;
+                    width: 100%;
+                    margin: 0;
+                    padding: 0;
+                    position: absolute;
+                    top: 20px;
+                    margin-left: 620px;
+                    z-index: 15;
+                }
+
+                /* CSS */
+                .button-10 {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    padding: 5px 193px;
+                    font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+                    
+                    border: none;
+                    position: absolute;
+                    top: 455px; 
+                    left: 562px;
+                    margin: auto;
+                    margin-top: 60px;
+                    z-index:120;
+                    color: #fff;
+                    background: #6F287C;
+                    background-origin: border-box;
+                    box-shadow: 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2);
+                    user-select: none;
+                    -webkit-user-select: none;
+                    touch-action: manipulation;
+                }
+
+                .select-wrapper1 {
+                    position: absolute;
+                    top: 45px;
+                    left: 78px;
+                    
+                }
+                .select-wrapper1::after {
+                    color: black;
+                    content: '▾';
+                    margin-right: 10px;
+                    pointer-events: none;
+                    position: absolute;
+                    left: 920px;
+                    top: 285px;
+                    font-size: 14px;
+                    z-index: 200;
+         
+                }
+
+                .select-wrapper2 {
+                    position: absolute;
+                    top: 130px;
+                    left: 78px;
+                    
+                }
+                .select-wrapper2::after {
+                    color: black;
+                    content: '▾';
+                    margin-right: 10px;
+                    pointer-events: none;
+                    position: absolute;
+                    left: 920px;
+                    top: 285px;
+                    font-size: 14px;
+                    z-index: 200;
+         
+                }
+
+                .clear {
+                    clear: both;
+                }
+                .select {
+                    -moz-appearance: none;
+                    -webkit-appearance: none;
+                    background: white;
+                    border: none;
+                    text-align: center;
+                    cursor: pointer;
+                    padding: 12px;
+                    width: 500px;
+                    font-size: 16px;
+                }
+                .select:focus {
+                    color: black;
+                }
+                .select::-ms-expand {
+                    display: none;
+                }
+                input{ 
+                    width: 503px; 
+                    height: 35px;}
+
+                .button-10:focus {
+                  box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2), 0px 0.5px 0.5px #ce8bda, 0px 0px 0px 1.5px #ce8bda;
+                  outline: 0;
+                }
+                .select-text {
+                    position: absolute;
+                    left: 528px;
+                    top: 480px;
+                    font-size: 14px;
+                    z-index: 200;
+                    width: 450px;
+
+                }
+                
+                h2 {
+                    position: absolute;
+                    width: 100%;
+                    left: 18px;
+                    top: 552px;
+                    color: #6F287C; 
+                    text-align: center; 
+                    font-size: 28px;
+                }
+
+                h3 {
+                    position: absolute;
+                    width: 100%;
+                    left: 17px;
+                    top: 635px;
+                    color: #9c9c9c; 
+                    text-align: center; 
+                    font-size: 13px;
+                    
+                }
+
+                .select-submit{
+                    position: absolute;
+                    width: 503px;
+                    left: 528px;
+                    top: 555px;
+                    background-color: #ce8bda;
+                    z-index: 500;
+                                       
+                    border: none;
+                    margin: auto;
+                    
+                   
+                    color: #fff;
+                    background: #6F287C;
+                    background-origin: border-box;
+                    box-shadow: 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2);
+                    user-select: none;
+                    -webkit-user-select: none;
+                    touch-action: manipulation;
+
+
+                }
+                #serv{
+                    color: white;
+                    padding: 7.5px;
+                    text-decoration: none;
+                    font-size: 12px;
+                    
+                    background-color: rgba(255, 255, 255, .2);
+
+                }
+
+                ._from{
+                    position: absolute;
+                    width: 100%;
+                    left: 530px;
+                    top: 288px;
+                    color: #646464; 
+                    text-align: left; 
+                    font-size: 11px;
+                    z-index: 5000000;
+
+                }
+
+                ._to{
+                    position: absolute;
+                    width: 100%;
+                    left: 530px;
+                    top: 370px;
+                    color: #646464; 
+                    text-align: left; 
+                    font-size: 11px;
+                    z-index: 5000000;
+
+                }
+                ._amount{
+                    position: absolute;
+                    width: 100%;
+                    left: 530px;
+                    top: 452px;
+                    color: #646464; 
+                    text-align: left; 
+                    font-size: 11px;
+                    z-index: 5000000;
+
+                }
+
+
+            .meniu{
+                width: 300px;
+                padding: 3px;
+                background-position-x: 400px;
+            }
+
+
+
+
+        </style>
+
+	</head>
+    <body>
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-danger" role="alert">
+            {{ message }}
+        </div>
+        {% endfor %}
+        {% endif %}
+        
+            <div class="logo">
+                <img src="{% static 'logo.png' %}" width="280">
+            </div>
+            <div class="menu">
+                <ul class="nav">
+                    <li><a class="navigation" href="{% url 'home' %}">Home</a></li>
+
+                    <li><a class="navigation" id="serv" href="{% url 'currency' %}">Currency Converter</a></li>
+                    <li><a class="navigation" href="{% url 'currency_stat' %}">Currency Statistics</a></li>
+                    <li><a class="navigation" href="{% url 'services' %}">Services</a></li>
+                    <li><a class="navigation" href="{% url 'contacts' %}">Contacts</a></li>
+                </ul>
+                <div class="box_jos"></div>
+                <div class="box_sus1"></div>
+                <div class="box_sus2"></div>
+                <ul class="jos">
+                    <li><b href="">Copyright © 2022 - 2023 - All Rights Reserved</b></li>
+                    <li><b href="">XML Sitemap | Privacy</b></li>
+                </ul>
+                
+            </div>
+
+            <div class="box"></div>   
+
+
+         <div class="container">
+         
+         <form method="post" action="{% url 'currency' %}">
+         {% csrf_token %}
+         <!-- Amount input -->
+		 <div class="select-text">
+            <input  name="amount" type="text" placeholder="0.00" style="text-align:center">
+         </div>
+         <br>
+         
+		 <div class="select-wrapper1">
+			<!-- From options -->
+            <select name="currency_from" class="select">
+               {% for c in currency_data %}
+               <option value="{{c.cc}}">{{c.name}}</option>
+               {% endfor %}
+            </select>
+         </div>
+         <br>
+         <div class="select-wrapper2">
+			<!-- To options -->
+            <select name="currency_to" class="select">
+               {% for c in currency_data %}
+               <option value="{{c.cc}}">{{c.name}}</option>
+               {% endfor %}
+            </select>
+         </div>
+         <br>
+         <div>
+            <input class="select-submit" type="submit" value="Convert">
+         </div>
+         <!-- Converter result -->
+         <h2> {{ result }} {{ currency_to }} </h2>
+         <h3>from {{ currency_from }} to {{ currency_to }}</h3>
+
+         <p class="_from">from</p>
+         <p class="_to">to</p>
+         <p class="_amount">amount</p>
+
+
+      </div>
+            
+            
+            
+    </body>
+        <script>
+            
+        
+        //     // now create a function that change values
+        //     function changeValue(e){
+        //         span.innerText = e.innerText
+        //         select.setAttribute('value', e.innerText)
+        //         ul.style.display = 'none'
+        //         selectSvg.classList.remove('rotate')
+        //     }
+
+
+
+        //     var from = document.querySelector('.from')
+        //     var span2 = document.querySelector('.from span')
+        //     var fromSvg = document.querySelector('.from svg')
+        //     var ul2 = document.querySelector('.from ul')
+        //     var li2 = document.querySelectorAll('.from ul li')
+        
+        //     // give first value by default
+        //     from.setAttribute('value', li2[0].innerText)
+        
+        //     // now add onClick attribute to each list
+        //     for(var i = 0; i < li2.length; i++){
+        //         li2[i].setAttribute('onClick', 'changeValue2(this)')
+        //     }
+        
+        //     // show and hide of list
+        //     fromSvg.onclick = () => span2.click()
+        //     span2.onclick = () => {
+        //         if(ul2.style.display === 'none'){
+        //             ul2.style.display = 'block'
+        //             fromSvg.classList.add('rotate')
+        //         }else{
+        //             ul2.style.display = 'none'
+        //             fromSvg.classList.remove('rotate')
+        //         }
+        //     }
+        
+        //     // now create a function that change values
+        //     function changeValue2(e){
+        //         span2.innerText = e.innerText
+        //         from.setAttribute('value', e.innerText)
+        //         ul2.style.display = 'none'
+        //         fromSvg.classList.remove('rotate')
+        //     }
+
+
+        //     var to = document.querySelector('.to')
+        //     var span3 = document.querySelector('.to span')
+        //     var toSvg = document.querySelector('.to svg')
+        //     var ul3 = document.querySelector('.to ul')
+        //     var li3 = document.querySelectorAll('.to ul li')
+        
+        //     // give first value by default
+        //     to.setAttribute('value', li3[0].innerText)
+        
+        //     // now add onClick attribute to each list
+        //     for(var i = 0; i < li3.length; i++){
+        //         li3[i].setAttribute('onClick', 'changeValue3(this)')
+        //     }
+        
+        //     // show and hide of list
+        //     toSvg.onclick = () => span3.click()
+        //     span3.onclick = () => {
+        //         if(ul3.style.display === 'none'){
+        //             ul3.style.display = 'block'
+        //             toSvg.classList.add('rotate')
+        //         }else{
+        //             ul3.style.display = 'none'
+        //             toSvg.classList.remove('rotate')
+        //         }
+        //     }
+        
+        //     // now create a function that change values
+        //     function changeValue3(e){
+        //         span3.innerText = e.innerText
+        //         to.setAttribute('value', e.innerText)
+        //         ul3.style.display = 'none'
+        //         toSvg.classList.remove('rotate')
+        //     }
+        // </script>
+        
+</html>
