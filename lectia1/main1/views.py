@@ -75,7 +75,7 @@ def currency(request):
 
 def currency_stat(request):
 
-    df = pd.read_csv('C:/Users/User/lectia1/main1/euro_dollar.csv')
+    df = pd.read_csv('main1/euro_dollar.csv')
 
     plot_div = plot([Scatter(x=df['Year'], y=df['Year Close'],
                         mode='lines', name='Currency USD/EUR',
